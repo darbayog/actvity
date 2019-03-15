@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section>
+    <button style="background-color:#ADD8E6;color:white" id="button" onclick="validateToken()">Validate Token</button>
+    <p id="validate"></p>
+</section>
+<script type="text/javascript">
+    function validateToken(){
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("validate").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "php/tvalidate.php", true);
+      xhttp.send();
+    }
+</script>
+</body>
+</html>
